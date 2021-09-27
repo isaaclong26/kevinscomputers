@@ -1,113 +1,76 @@
 
-
-
-
 *{
-    margin:0%;
-    font-family: 'Roboto', sans-serif;   
-
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
-body section{
-  padding-top: 40px;;
-}
-
-#blueScreen{
-    background-color:#0078D7ff;
-    flex: 1;
-    height: 450px;
-    color:#DFEEFA;
-    font-family: 'Roboto', sans-serif;   
-    padding: 20px;
-    opacity: 1;
-    padding-top: 100px;
-    
-}
-
-
 
 
 header{
-    background-color: rgb(88, 88, 88);
-    padding: 10px;
-    display: flex;
     text-align: center;
-    flex: 1 0 10%;
-    position: fixed;
+    color:#D7EAF8;
+    
+    
+    
+}
+header h1{
+    padding: 20px;
+}
+#faceCap{
+    color:#D7EAF8;
+    font-size: xx-large;
+}
+
+.laptop{
     width: 100%;
-}
-
-#title{
-    width:100%;
-    text-align: center;
-    background-color: #0078D7ff;
-    color:#DFEEFA;
-    padding: 20px;
-    font-size: 3vw;
-    position: sticky;
-    top: 0;
     
- 
-
 
 }
-#titleText{
-    visibility: hidden;
-    
-}
-
 .content{
-    flex:1;
-    
-    display:flex;
+    flex: 50%;
     text-align: center;
-}
-
-.content h2{
-    font-size: 3vw;
-    padding-top: 40px;
     
 }
-.content h3{
-    font-size: 2.5vw;
-    padding: 20px;
-}
-
-.content a{
+.content a {
     text-decoration: none;
     color: black;
     font-style: italic;
 }
-
-
-
- hr{
-    border-top: 20px solid #0078D7ff;
-    margin:0 40px 0 40px;
-    border-radius: 5px;
+.about h2 {
+    font-size: 2.5vw;
     
+}
+.content2{
+    flex: 50%;
+    
+    text-align: center;
 }
 .about{
-    padding: 30 65 65 65px;
-    font-size: 2.5vw;
+    font-size: 2vw;
+    padding: 30px 65px 65px 65px;
+}
+.flexContainer{
+    display: flex;
+  flex-direction: row;
+  margin-top: 50px;
+  padding: 100px 0px;
 }
 
 
-.left{
-    
-    
-    flex: 50%;
-  }
-  
-  .right {
-        
-      flex: 50%;
-      
-     
-      
-  }
+hr {
+    border-top: 20px solid #0078D7ff;
+    margin: 0 40px 0 40px;
+    border-radius: 5px;
+}
 
-
-  @media (max-width: 800px) {
-    .content {
+@media screen and (max-width: 700px) {
+    .flexContainer {   
       flex-direction: column;
-    }}
+    }
+    .about{
+        font-size: 5vw;
+    }
+    .about h2{
+        font-size: 6vw;
+    }
+  }

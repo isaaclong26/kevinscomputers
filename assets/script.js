@@ -1,50 +1,55 @@
+//jquery code goes in here. everything will be called when the page fully loads. 
 
-
- var opacVal= 1;
- var breakPoint= 0;
- function timing(){
-    setTimeout(blueScreen, 3000)
-    
- }
- function blueScreen(){
- var opacTimer = setInterval(function(){
-     
-    document.getElementById("blueScreen").style.opacity=opacVal;
-    document.getElementById("title").style.opacity=opacVal;
-    opacVal= opacVal-.01;
-    
-    if (opacVal<0){
-        clearInterval(opacTimer);
-        document.getElementById("face").src="./assets/smile.jpg";
-        document.getElementById("tagline").innerHTML="We Can Help";
-        document.getElementById('titleText').style.visibility = 'visible';
-        
-        var opacTimer2 =setInterval(function(){
-     
-            document.getElementById("blueScreen").style.opacity=opacVal;
-            document.getElementById("title").style.opacity=opacVal;
-            opacVal= opacVal+.01;
-            
-
-
-            if (opacVal>1){
-                clearInterval(opacTimer2);
-                
-                
-    }
- }
- ,5)
-
- }
-
-},5)
- }
+$(function () {
+    bcod();
 
 
 
+});
 
-function openningPage(){
-    document.getElementById("face").src="./assets/smile.jpg";
 
+function bcod() {
+    $("#title").hide();
+    $(".flexContainer").hide();
+    $("header").css({
+        "background-color": "#0078D7",
+        "height": $(window).height()
+    })
+    var wh = $(window).height();
+    var fh = $("#face").height();
+    $("#face").css({
+        "padding-top": (wh / 2) - (fh / 2)
+    });
+
+    //fade out 
+    setTimeout(trans, 2000)
+
+    function trans() {
+        $("header").fadeOut(function () {
+            $("#faceCap").text("We Can Help");
+            $("#face").attr("src", "./assets/smile.jpg")
+
+            $("header").fadeIn();
+
+            setTimeout(convertToHeader, 2000);
+
+            function convertToHeader() {
+                $("header").animate({
+                    height: "80px",
+                });
+                $(".flexContainer").show();
+                $("#face, #faceCap").hide();
+                $("#title").fadeIn();
+                $('header').css({
+                    position: 'fixed',
+                    width: "100%",
+                    top: "0px"
+
+                });
+            }
+
+
+
+        })
+    };
 }
-    
